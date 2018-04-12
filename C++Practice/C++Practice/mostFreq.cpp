@@ -2,7 +2,7 @@
 John Vogel
 Start: 3/26/2018
 End: 
-Prompt: Find the most frequent integer in an array
+Prompt: Find one of the most frequent integers in an array. 
 */
 #include <iostream>
 #include <cstdlib>
@@ -20,7 +20,7 @@ int main() {
 
 	mostFreq(array, 10);
 
-	int userArr[10];
+	int userArr[10]; //array that user fills
 
 	fillArr(userArr, 10);
 	displayArr(userArr, 10);
@@ -36,20 +36,24 @@ int main() {
 void mostFreq(int temp[], int size){
 
 	int mostF = 0; //most frequent number
-	int cnt1=0; //counters
-	int cnt2 = 0;
+	int cnt1 = 0; //counts how many times a value shows up
+	int cnt2 = 0; //highest amount counted for a single value
 	for (int i = 0; i < size; i++) {
 		for (int f = 0; f < size; f++) {
-			if (temp[i] = temp[f]) {
+			if (temp[i] == temp[f]) {
 				cnt1++;
 			}
 			if (cnt1 > cnt2) {
 				mostF = temp[i];
 				cnt2 = cnt1;
 			}
+			if (f == size - 1) {
+				cnt1 = 0; //reset counter
+			}
 		}
+
 	}
-	cout << "The most frequent number in the array is:\n" << mostF << "\n";
+	cout << "The one of the most frequent numbers in the array is: " << mostF << ", appearing " << cnt2 << " times.\n";
 	return;
 }
 
