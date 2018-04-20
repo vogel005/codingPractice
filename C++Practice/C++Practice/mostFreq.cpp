@@ -1,39 +1,28 @@
 /*
 John Vogel
 Start: 3/26/2018
-End: 
+End: 4/11/2018
+Converted into class: 4/19/2018
 Prompt: Find one of the most frequent integers in an array. 
 */
-#include <iostream>
-#include <cstdlib>
-using namespace std;
+#ifndef MOSTFREQ_CPP
+#define MOSTFREQ_CPP
+#include "mostFreq.h"
 
-void mostFreq(int temp[], int size); //finds most frequent value in an array
-void displayArr(int temp[], int size); //displays contents of array
-void fillArr(int temp[], int size); //fills users array
+mostFreq::mostFreq(int array_[], int userArr_[])
+{
+	for (int i = 0; i < 10; i++)
+		array[i] = array_[i];
 
-int main() {
+	for (int i = 0; i < 10; i++)
+		userArr[i] = userArr_[i];
 
-	int array[10] = { 16, 28, 10, 23, 1, 32, 32, 0, 1, 1 }; //static array 
-
-	displayArr(array, 10);
-
-	mostFreq(array, 10);
-
-	int userArr[10]; //array that user fills
-
-	fillArr(userArr, 10);
-	displayArr(userArr, 10);
-	mostFreq(userArr, 10);
-
-	cin.ignore();
-	cout << "Please press Enter to End Program. \n";
-	cin.get();
-
-	return 0;
+}
+mostFreq::~mostFreq()
+{
 }
 
-void mostFreq(int temp[], int size){
+void mostFreq::Freq(int temp[], int size) {
 
 	int mostF = 0; //most frequent number
 	int cnt1 = 0; //counts how many times a value shows up
@@ -58,7 +47,7 @@ void mostFreq(int temp[], int size){
 }
 
 
-void displayArr(int temp[], int size) {
+void mostFreq::displayArr(int temp[], int size) {
 
 	for (int i = 0; i< size; i++) {
 		cout << temp[i] << " ";
@@ -68,7 +57,7 @@ void displayArr(int temp[], int size) {
 	return;
 }
 
-void fillArr(int temp[], int size) {
+void mostFreq::fillArr(int temp[], int size) {
 
 	cout << "Please type " << size << " numbers:\n";
 	for (int i = 0; i < size; i++) {
@@ -78,3 +67,16 @@ void fillArr(int temp[], int size) {
 	cout << "\n";
 	return;
 }
+
+void mostFreq::processFreq() {
+
+	displayArr(array, 10);
+	Freq(array, 10);
+	fillArr(userArr, 10);
+	displayArr(userArr, 10);
+	Freq(userArr, 10);
+
+	return;
+}
+
+#endif
