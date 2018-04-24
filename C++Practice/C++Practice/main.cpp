@@ -1,26 +1,35 @@
 /*
 John Vogel
-
+Last Modified: 4/23/2018
 Main file for C++ Coding Practice
 */
 #include <iostream>
 #include "mostFreq.h"
 using namespace std;
 
-
-
 int main() {
 
 	mostFreq freq;
+	int choice;
 
-	freq.processFreq();
-	
-	//cout << "Select what program to run: " << endl;
-	//while loop and switch statement required to select which program to run
+	//do while & switch statement to choose which program to run. 
+	do {
+		cout << "\n1. mostFreq\n2. Exit and end program\nSelect what program to run:" << endl;
+		cin >> choice;
 
-	cin.ignore();
-	cout << "Please press Enter to End Program." << endl;
-	cin.get();
+		switch (choice) {
+		case 1:
+			freq.processFreq();
+			break;
+
+		case 2:
+			cout << "Goodbye!" << endl;
+			break;
+
+		default:
+			cout << "Error: " << choice << " is an incorrect input. Try again." << endl;
+		}
+	} while (choice != 2);
 
 	return 0;
 }

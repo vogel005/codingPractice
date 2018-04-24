@@ -1,8 +1,7 @@
 /*
 John Vogel
 Start: 3/26/2018
-End: 4/11/2018
-Converted into class: 4/19/2018
+Last Modified: 4/19/2018
 Prompt: Find one of the most frequent integers in an array.
 */
 #ifndef MOSTFREQ_H
