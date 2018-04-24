@@ -18,7 +18,8 @@ int main() {
 	do {
 		cout << "\n1. Exit and end program\n2. mostFreq\n3. nonRepeating\nSelect what program to run:" << endl;
 		cin >> choice;
-	
+		cout << endl; 
+
 		switch (choice) {
 		case 1: 
 			cout << "Goodbye!" << endl;
