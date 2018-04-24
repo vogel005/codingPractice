@@ -14,7 +14,7 @@ int main() {
 
 	//do while & switch statement to choose which program to run. 
 	do {
-		cout << "\n1. mostFreq\n2. Exit\nSelect what program to run:" << endl;
+		cout << "\n1. mostFreq\n2. Exit and end program\nSelect what program to run:" << endl;
 		cin >> choice;
 
 		switch (choice) {
@@ -27,7 +27,7 @@ int main() {
 			break;
 
 		default:
-			cout << "Error: " << choice << "is an incorrect input. Try again." << endl;
+			cout << "Error: " << choice << " is an incorrect input. Try again." << endl;
 		}
 	} while (choice != 2);
 
