@@ -23,7 +23,7 @@ public:
 	void Freq(int temp[], int size); //finds most frequent value in an array
 	void displayArr(int temp[], int size); //displays contents of array
 	void fillArr(int temp[], int size); //fills users array
-	void processFreq();
+	void processFreq(); //runs all the functions
 };
 
 #endif

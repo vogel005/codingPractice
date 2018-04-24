@@ -10,15 +10,15 @@ using namespace std;
 int main() {
 
 	mostFreq freq;
-	int choice;
+	int choice =0;
 
 	//do while & switch statement to choose which program to run. 
 	do {
 		cout << "\n1. mostFreq\n2. Exit and end program\nSelect what program to run:" << endl;
 		cin >> choice;
-
+	
 		switch (choice) {
-		case 1:
+		case 1: 
 			freq.processFreq();
 			break;
 
