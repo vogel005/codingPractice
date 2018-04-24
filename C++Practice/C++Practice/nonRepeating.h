@@ -16,9 +16,10 @@ private:
 	string myStr = "bbbbbbbbbbbabbbbbbbbbbbbbbbb"; //b repeating with a being first non-repeating character. 
 
 public:
+	nonRepeating() = default;
 	nonRepeating(string myStr_);
 	~nonRepeating();
-	void Repeat();
+	void Repeat(string temp);
 	void processRepeat();
 };
 
