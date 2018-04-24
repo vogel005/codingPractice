@@ -1,7 +1,7 @@
 /*
 John Vogel
 Start: 3/26/2018
-Last Modified: 4/19/2018
+Last Modified: 4/24/2018
 Prompt: Find one of the most frequent integers in an array. 
 */
 #ifndef MOSTFREQ_CPP
@@ -41,29 +41,30 @@ void mostFreq::Freq(int temp[], int size) {
 		}
 
 	}
-	cout << "The one of the most frequent numbers in the array is: " << mostF << ", appearing " << cnt2 << " times.\n";
+	cout << "The one of the most frequent numbers in the array is: " << mostF << ", appearing " << cnt2 << " times." << endl;
 	return;
 }
 
 
 void mostFreq::displayArr(int temp[], int size) {
 
+	cout << "Array: ";
 	for (int i = 0; i< size; i++) {
 		cout << temp[i] << " ";
 	}
-	cout << "\n";
+	cout << endl;
 
 	return;
 }
 
 void mostFreq::fillArr(int temp[], int size) {
 
-	cout << "Please type " << size << " numbers:\n";
+	cout << endl << "Please type " << size << " numbers:\n";
 	for (int i = 0; i < size; i++) {
 		cout << "Array value " << i << ": ";
 		cin >> temp[i];
 	}
-	cout << "\n";
+	cout << endl;
 	return;
 }
 

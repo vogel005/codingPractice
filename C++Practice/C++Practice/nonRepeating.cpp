@@ -28,7 +28,7 @@ void nonRepeating::Repeat(string temp) {
 		curr = temp[i];
 
 		if (prev != curr) {
-			cout << "The first nonrepeated character is " << curr << " at " << i+1 << " location." << endl; //adding +1 as we are starting i at 1 instead of 0.
+			cout << "The first nonrepeated character is: " << curr << ", at position " << i+1 << "." << endl; //adding +1 as we are starting i at 1 instead of 0.
 			return;
 		}
 		else
@@ -41,7 +41,7 @@ void nonRepeating::Repeat(string temp) {
 
 void nonRepeating::processRepeat(){
 
-	cout << myStr << endl;
+	cout << "String: " << myStr << endl;
 	Repeat(myStr);
 
 	return; 
