@@ -5,31 +5,37 @@ Main file for C++ Coding Practice
 */
 #include <iostream>
 #include "mostFreq.h"
+#include "nonRepeating.h"
 using namespace std;
 
 int main() {
 
 	mostFreq freq;
-	int choice;
+	nonRepeating rep;
+	int choice =0;
 
 	//do while & switch statement to choose which program to run. 
 	do {
-		cout << "\n1. mostFreq\n2. Exit and end program\nSelect what program to run:" << endl;
+		cout << "\n1. Exit and end program\n2. mostFreq\n3. nonRepeating\nSelect what program to run:" << endl;
 		cin >> choice;
-
+	
 		switch (choice) {
-		case 1:
-			freq.processFreq();
+		case 1: 
+			cout << "Goodbye!" << endl;
 			break;
 
 		case 2:
-			cout << "Goodbye!" << endl;
+			freq.processFreq();
+			break;
+
+		case 3:
+			rep.processRepeat();
 			break;
 
 		default:
 			cout << "Error: " << choice << " is an incorrect input. Try again." << endl;
 		}
-	} while (choice != 2);
+	} while (choice != 1);
 
 	return 0;
 }
