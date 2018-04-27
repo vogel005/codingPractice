@@ -1,7 +1,7 @@
 /*
 John Vogel
 Start: 4/26/2018
-Last Modified: 4/26/2018
+Last Modified: 4/27/2018
 Prompt: Implement a stack with push and pop functions
 */
 #ifndef STACK_H
@@ -23,7 +23,15 @@ public:
 
 	void push(int temp);
 	int pop();
+	void displayAll();
+	void stackProcess();
 
+	/*
+	Potential other functions to make:
+	clearstack
+	check stack if empty
+	check stack if full
+	*/
 
 };
 
