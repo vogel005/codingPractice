@@ -118,10 +118,12 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mostFreq.cpp" />
     <ClCompile Include="nonRepeating.cpp" />
+    <ClCompile Include="stack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mostFreq.h" />
     <ClInclude Include="nonRepeating.h" />
+    <ClInclude Include="stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
