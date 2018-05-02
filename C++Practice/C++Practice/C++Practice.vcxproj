@@ -115,12 +115,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="llist.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mostFreq.cpp" />
     <ClCompile Include="nonRepeating.cpp" />
     <ClCompile Include="stack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="llist.h" />
     <ClInclude Include="mostFreq.h" />
     <ClInclude Include="nonRepeating.h" />
     <ClInclude Include="stack.h" />
