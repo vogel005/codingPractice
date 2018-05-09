@@ -157,7 +157,24 @@ void llist::listDisplay() {
 }
 
 void llist::listProc() {
-	//int temp;
+	int temp = 0;
+
+	addStart(temp);
+	temp = 23;
+	addEnd(temp);
+	temp = 54;
+	addPos(2, temp);
+	temp = 1;
+	addStart(temp);
+
+	listDisplay();
+
+	delPos(3);
+	delStart();
+	delEnd();
+	delStart();
+
+	listDisplay();
 
 }
 #endif
