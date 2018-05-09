@@ -33,7 +33,7 @@ public:
 	//delete
 	void delStart(); //delete start 
 	void delEnd(); //delete end
-	void delPos(); //delete at position 
+	void delPos(int pos); //delete at position 
 
 	void listDisplay(); //displays all data in a list
 	void listProc(); //will run the functions
