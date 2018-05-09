@@ -23,3 +23,9 @@ https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_big_li
 **gitignore**
 
 https://github.com/github/gitignore
+
+**School Projects**
+
+Code I had done before in school. 
+
+https://portfolium.com/johnvogel
