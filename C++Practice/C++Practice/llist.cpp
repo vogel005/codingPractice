@@ -1,7 +1,7 @@
 /*
 John Vogel
 Start: 4/30/2018
-Last Modified: 5/2/2018
+Last Modified: 5/9/2018
 Prompt: Implement a linked list (with insert and delete functions)
 */
 #ifndef LLIST_CPP
@@ -140,7 +140,20 @@ void llist::delPos(int pos){
 }
 
 void llist::listDisplay() {
+	//if it's empty
+	if (front == NULL & back == NULL) {
+		cout << "List is empty." << endl;
+		return;
+	}
 
+	node *temp = new node; 
+	temp = front; 
+
+	while (temp != NULL){
+		cout << temp->data << " ";
+		temp = temp->next;
+	}
+	cout << endl;
 }
 
 void llist::listProc() {

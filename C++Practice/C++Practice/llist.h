@@ -1,7 +1,7 @@
 /* 
 John Vogel
 Start: 4/30/2018
-Last Modified: 5/2/2018
+Last Modified: 5/8/2018
 Prompt: Implement a linked list (with insert and delete functions)
 */
 #ifndef LLIST_H
