@@ -135,8 +135,8 @@ void llist::delPos(int pos){
 		prev = curr;
 		curr = curr->next;
 	}
-	delete curr;
-	prev->next = curr->next;
+	//delete curr; 
+	prev->next = curr->next; //error
 }
 
 void llist::listDisplay() {
@@ -146,11 +146,11 @@ void llist::listDisplay() {
 		return;
 	}
 
-	node *temp = new node; 
+	node *temp; //= new node;
 	temp = front; 
 
 	while (temp != NULL){
-		cout << temp->data << " ";
+		cout << temp->data << " "; //error
 		temp = temp->next;
 	}
 	cout << endl;
@@ -158,23 +158,24 @@ void llist::listDisplay() {
 
 void llist::listProc() {
 	int temp = 0;
-
+	//need to test each function to see if it's working
 	addStart(temp);
+	/*
 	temp = 23;
 	addEnd(temp);
 	temp = 54;
 	addPos(2, temp);
 	temp = 1;
 	addStart(temp);
-
+	*/
 	listDisplay();
-
+	/*
 	delPos(3);
 	delStart();
 	delEnd();
 	delStart();
 
 	listDisplay();
-
+	*/
 }
 #endif
