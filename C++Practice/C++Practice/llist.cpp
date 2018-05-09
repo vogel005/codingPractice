@@ -36,6 +36,7 @@ void llist::addStart(int _data) {
 
 void llist::addEnd(int _data) {
 
+	//if it's empty
 	if (front == NULL & back == NULL){
 		addStart(_data);
 		return;
@@ -81,13 +82,61 @@ void llist::addPos(int pos, int _data) {
 //deletes
 void llist::delStart() {
 
+	//if it's empty
+	if (front == NULL & back == NULL) {
+		cout << "List is empty, can't delete." << endl;
+		return;
+	}
+
+	node *temp = new node;
+	temp = front;
+	front = front->next;
+	delete temp; 
+
+	if (front == NULL) //if the list has become empty due to the delete
+		back = front; 
 }
 
 void llist::delEnd() {
+	//if it's empty
+	if (front == NULL & back == NULL) {
+		cout << "List is empty, can't delete." << endl;
+		return;
+	}
+
+	node *curr = new node;
+	node *prev = new node;
+	curr = front; 
+
+	while (curr->next != NULL){
+		prev = curr; 
+		curr = curr->next;
+	}
+
+	back = prev;
+	prev->next = NULL;
+	delete curr; 
 
 }
 
-void llist::delPos(){
+void llist::delPos(int pos){
+
+	if(pos == 1){
+		delStart();
+		return;
+	}
+
+	node *curr = new node;
+	node *prev = new node;
+
+	curr = front;
+
+	for (int i = 1; i < pos; i++) {
+		prev = curr;
+		curr = curr->next;
+	}
+	delete curr;
+	prev->next = curr->next;
 }
 
 void llist::listDisplay() {
