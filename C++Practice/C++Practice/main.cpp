@@ -1,6 +1,6 @@
 /*
 John Vogel
-Last Modified: 5/2/2018
+Last Modified: 5/9/2018
 Main file for C++ Coding Practice
 */
 #include <iostream>
@@ -47,7 +47,7 @@ int main() {
 				break;
 
 			case 5: 
-				//list.listProc();
+				list.listProc();
 				break;
 			default:
 				cout << "Error: " << choice << " is an incorrect input. Try again." << endl;
