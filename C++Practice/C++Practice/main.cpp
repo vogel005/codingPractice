@@ -1,6 +1,6 @@
 /*
 John Vogel
-Last Modified: 5/9/2018
+Last Modified: 5/10/2018
 Main file for C++ Coding Practice
 */
 #include <iostream>
@@ -20,7 +20,7 @@ int main() {
 
 	//do while & switch statement to choose which program to run. 
 	do {
-		cout << "\n1. Exit and end program\n2. mostFreq\n3. nonRepeating\n4. stack\n5. llist\nSelect what program to run: ";
+		cout << "\n---C++ Coding Practice---\n1. Exit and end program\n2. mostFreq\n3. nonRepeating\n4. stack\n5. llist\nSelect what program to run: ";
 		
 		if (!(cin >> choice)){
 			cin.clear(); //clears the error flag set by the cin

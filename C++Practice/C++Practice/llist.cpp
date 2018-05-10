@@ -1,7 +1,7 @@
 /*
 John Vogel
 Start: 4/30/2018
-Last Modified: 5/9/2018
+Last Modified: 5/10/2018
 Prompt: Implement a linked list (with insert and delete functions)
 */
 #ifndef LLIST_CPP
@@ -16,13 +16,15 @@ llist::llist()
 
 llist::~llist()
 {
+	while (!(front == NULL & back == NULL)) {
+		delStart();
+	}
 }
 
 //inserts
 void llist::addStart(int _data) {
 	//adds new node to front of list
-	node *temp;
-	temp = new node;
+	node *temp = new node;
 	temp->next = front;
 	front = temp;
 	front->data = _data;
@@ -42,11 +44,10 @@ void llist::addEnd(int _data) {
 		return;
 	}
 
-	node *temp;
-	temp = new node;
-	temp->next = NULL;
-	back = temp;
+	back->next = new node; 
+	back = back->next;
 	back->data = _data;
+	back->next = NULL; 
 
 	return;
 }
@@ -135,8 +136,8 @@ void llist::delPos(int pos){
 		prev = curr;
 		curr = curr->next;
 	}
-	//delete curr; 
-	prev->next = curr->next; //error
+	prev->next = curr->next;
+	delete curr; 
 }
 
 void llist::listDisplay() {
@@ -146,11 +147,11 @@ void llist::listDisplay() {
 		return;
 	}
 
-	node *temp; //= new node;
+	node *temp;
 	temp = front; 
 
 	while (temp != NULL){
-		cout << temp->data << " "; //error
+		cout << temp->data << " "; 
 		temp = temp->next;
 	}
 	cout << endl;
@@ -158,24 +159,24 @@ void llist::listDisplay() {
 
 void llist::listProc() {
 	int temp = 0;
-	//need to test each function to see if it's working
+	//add
 	addStart(temp);
-	/*
 	temp = 23;
 	addEnd(temp);
 	temp = 54;
 	addPos(2, temp);
 	temp = 1;
 	addStart(temp);
-	*/
+
 	listDisplay();
-	/*
+	//delete
 	delPos(3);
 	delStart();
 	delEnd();
 	delStart();
 
 	listDisplay();
-	*/
+
+	//user input?
 }
 #endif
