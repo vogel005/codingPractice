@@ -25,6 +25,8 @@ public:
 	llist();
 	~llist();
 
+	//is empty check
+
 	//insert
 	void addStart(int _data); //insert start
 	void addEnd(int _data); //insert end
@@ -34,9 +36,12 @@ public:
 	void delStart(); //delete start 
 	void delEnd(); //delete end
 	void delPos(int pos); //delete at position 
+	//clear entire list 
 
 	void listDisplay(); //displays all data in a list
 	void listProc(); //will run the functions
+
+	
 };
 
 #endif

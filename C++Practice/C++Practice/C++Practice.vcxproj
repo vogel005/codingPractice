@@ -120,12 +120,14 @@
     <ClCompile Include="mostFreq.cpp" />
     <ClCompile Include="nonRepeating.cpp" />
     <ClCompile Include="stack.cpp" />
+    <ClCompile Include="tree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="llist.h" />
     <ClInclude Include="mostFreq.h" />
     <ClInclude Include="nonRepeating.h" />
     <ClInclude Include="stack.h" />
+    <ClInclude Include="tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
