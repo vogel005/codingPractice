@@ -136,7 +136,7 @@ void llist::delPos(int pos){
 		prev = curr;
 		curr = curr->next;
 	}
-	prev->next = curr->next;
+	prev->next = curr->next; //have the previous node point to the node after the node to be deleted, aka curr
 	delete curr; 
 }
 
