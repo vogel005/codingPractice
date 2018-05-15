@@ -1,7 +1,7 @@
 /*
 John Vogel
 Start: 5/10/2018
-Last Modified: 5/11/2018
+Last Modified: 5/14/2018
 Prompt: Implement a BST with insert and delete functions
 */
 #ifndef TREE_CPP
@@ -61,9 +61,28 @@ void tree::addNode(int _data) {
 }
 
 //delete
-void tree::delNode() {
+void tree::delNode(int _data) {
 
+	node *temp = root;
+	node *par = NULL;
+
+	//if the node is the root
+
+	//node is not the root
+
+		//if _data == temp->data
+		//traversal 
 }
 
 //display
+
+void tree::remove(node *temp, node *par) {
+
+	//case 1: no children
+	//case 2: one child. left or right
+	//case 3: two children
+}
+
+
+
 #endif

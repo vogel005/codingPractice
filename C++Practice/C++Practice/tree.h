@@ -1,7 +1,7 @@
 /*
 John Vogel
 Start: 5/10/2018
-Last Modified: 5/11/2018
+Last Modified: 5/14/2018
 Prompt: Implement a BST with insert and delete functions
 */
 #ifndef TREE_H
@@ -24,9 +24,12 @@ public:
 	~tree();
 
 	void addNode(int _data); //insert new node to the tree
-	void delNode(); //delete node from the tree
+	void delNode(int _data); //delete node from the tree
 
 	//display
+protected:
+	void remove(node *temp, node *par); //removes node knowing its parent. 
+
 };
 
 #endif
