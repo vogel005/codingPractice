@@ -67,11 +67,46 @@ void tree::delNode(int _data) {
 	node *par = NULL;
 
 	//if the node is the root
+	if ((_data == root->data) && (root->left == NULL) && (root->right == NULL)) { //case1: if the root is the only node in the tree
+		delete root; 
+		root = NULL;
 
-	//node is not the root
+		return;
+	}
 
-		//if _data == temp->data
-		//traversal 
+	else if ((root->left != NULL && root->right == NULL) || (root->right != NULL && root->left == NULL)) { //case2: if the root has one child
+		if (root->left != NULL && root->right == NULL)
+			temp = temp->left;
+		else
+			temp = temp->right;
+
+		delete root;
+		root = temp;
+
+		return;
+	}
+
+
+	//node is not the root or root has 2 children atleast
+	temp = root;
+
+	while (temp != NULL) {
+		if (_data == temp->data) { //found the number and removing it
+			remove(temp, par);
+			return;
+		}
+
+		else if (_data < temp->data) { //traverse left
+			par = temp;
+			temp = temp->left;
+		}
+		else { //traverse right
+			par = temp;
+			temp = temp->right;
+		}
+
+	}
+	//key was not found 
 }
 
 //display
@@ -142,7 +177,7 @@ int tree::leftMax(node *temp) {
 	node *par = temp; //parent node
 	temp = temp->left; 
 
-	while (temp->right != NULL) {
+	while (temp->right != NULL) { //traversal
 		par = temp;
 		temp = temp->right;
 	}
