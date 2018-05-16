@@ -1,7 +1,7 @@
 /*
 John Vogel
 Start: 5/10/2018
-Last Modified: 5/15/2018
+Last Modified: 5/16/2018
 Prompt: Implement a BST with insert and delete functions
 */
 #ifndef TREE_H
@@ -30,7 +30,7 @@ public:
 
 protected:
 	void remove(node *temp, node *par); //removes node knowing its parent. 
-	int leftMax(node* temp); //finds the max in left-subtree
+	int leftMax(node* temp); //finds the max in left-subtree and removes it
 
 };
 

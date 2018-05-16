@@ -1,7 +1,7 @@
 /*
 John Vogel
 Start: 5/10/2018
-Last Modified: 5/15/2018
+Last Modified: 5/16/2018
 Prompt: Implement a BST with insert and delete functions
 */
 #ifndef TREE_CPP
@@ -129,15 +129,28 @@ void tree::remove(node *temp, node *par) {
 	
 	//case 3: two children
 	else {
-
+		int Mdata; //max data in left of subtree
+		Mdata = leftMax(temp);
+		temp->data = Mdata;
+		return;
 	}
 
 }
 
 int tree::leftMax(node *temp) {
 
+	node *par = temp; //parent node
+	temp = temp->left; 
+
+	while (temp->right != NULL) {
+		par = temp;
+		temp = temp->right;
+	}
+
+	int _data = temp->data;
+	remove(temp, par);
+
+	return _data;
 }
-
-
 
 #endif
