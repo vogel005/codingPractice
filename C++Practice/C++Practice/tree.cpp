@@ -1,7 +1,7 @@
 /*
 John Vogel
 Start: 5/10/2018
-Last Modified: 5/11/2018
+Last Modified: 5/16/2018
 Prompt: Implement a BST with insert and delete functions
 */
 #ifndef TREE_CPP
@@ -61,9 +61,131 @@ void tree::addNode(int _data) {
 }
 
 //delete
-void tree::delNode() {
+void tree::delNode(int _data) {
 
+	node *temp = root;
+	node *par = NULL;
+
+	//if the node is the root
+	if ((_data == root->data) && (root->left == NULL) && (root->right == NULL)) { //case1: if the root is the only node in the tree
+		delete root; 
+		root = NULL;
+
+		return;
+	}
+
+	else if ((root->left != NULL && root->right == NULL) || (root->right != NULL && root->left == NULL)) { //case2: if the root has one child
+		if (root->left != NULL && root->right == NULL)
+			temp = temp->left;
+		else
+			temp = temp->right;
+
+		delete root;
+		root = temp;
+
+		return;
+	}
+
+
+	//node is not the root or root has 2 children atleast
+	temp = root;
+
+	while (temp != NULL) {
+		if (_data == temp->data) { //found the number and removing it
+			remove(temp, par);
+			return;
+		}
+
+		else if (_data < temp->data) { //traverse left
+			par = temp;
+			temp = temp->left;
+		}
+		else { //traverse right
+			par = temp;
+			temp = temp->right;
+		}
+
+	}
+	//key was not found 
 }
 
 //display
+
+
+void tree::remove(node *temp, node *par) {
+
+	//case 1: no children
+	if (temp->left == NULL && temp->right == NULL) {
+		if (temp->data < par->data) {
+			delete temp;
+			par->left = NULL;
+		}
+		else {
+			delete temp;
+			par->right = NULL;
+		}
+		return;
+	}
+
+	//case 2: one child.
+	//left
+	else if (temp->left != NULL && temp->right == NULL) {
+		par = temp;
+		temp = temp->left;
+		
+		par->data = temp->data;
+		if (temp->left != NULL) {
+			par->left = temp->left;
+			delete temp;
+		}
+		else {
+			delete temp; 
+			par->left = NULL;
+		}
+		return;
+	}
+
+	//right
+	else if (temp->right != NULL && temp->left == NULL) {
+		par = temp;
+		temp = temp->right;
+
+		par->data = temp->data;
+		if (temp->right != NULL) {
+			par->right = temp->right;
+			delete temp;
+		}
+		else {
+			delete temp;
+			par->right = NULL;
+		}
+		return;
+	}
+	
+	//case 3: two children
+	else {
+		int Mdata; //max data in left of subtree
+		Mdata = leftMax(temp);
+		temp->data = Mdata;
+		return;
+	}
+
+}
+
+int tree::leftMax(node *temp) {
+
+	node *par = temp; //parent node
+	temp = temp->left; 
+
+	while (temp->right != NULL) { //traversal
+		par = temp;
+		temp = temp->right;
+	}
+
+	int _data = temp->data;
+	remove(temp, par);
+
+	return _data;
+}
+
 #endif
