@@ -1,7 +1,7 @@
 /*
 John Vogel
 Start: 5/10/2018
-Last Modified: 5/16/2018
+Last Modified: 5/17/2018
 Prompt: Implement a BST with insert and delete functions
 */
 #ifndef TREE_CPP
@@ -109,9 +109,42 @@ void tree::delNode(int _data) {
 	//key was not found 
 }
 
-//display
+void tree::preorderTrav(node *temp) {
+
+	if (temp != NULL) {
+		cout << temp->data << " "; 
+		preorderTrav(temp->left);
+		preorderTrav(temp->right);
+	}
+	cout << endl;
+}
 
 
+void tree::bstProc() {
+	//empty tree
+	preorderTrav(root); 
+	/*
+	//add to tree
+	addNode(3);
+	addNode(5);
+	addNode(2);
+	addNode(7);
+	addNode(2);
+	addNode(23);
+
+	preorderTrav(root);
+
+	//delete some of tree
+
+	delNode(3);
+	delNode(7);
+	delNode(2);
+
+	preorderTrav(root);
+	*/
+}
+
+//protected
 void tree::remove(node *temp, node *par) {
 
 	//case 1: no children
