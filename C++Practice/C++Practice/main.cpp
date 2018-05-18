@@ -22,7 +22,9 @@ int main() {
 
 	//do while & switch statement to choose which program to run. 
 	do {
-		cout << endl << "---C++ Coding Practice---" << endl << "1. Exit and end program" << endl << "2. mostFreq" << endl << "3. nonRepeating" << "4. stack" << "5. llist" << endl << "6. bst" << "Select what program to run: ";
+		cout << "\n---C++ Coding Practice---" << endl;
+		cout << "1. Exit and end program" << endl << "2. mostFreq" << "3. nonRepeating" << endl << "4. stack" << endl << "5. llist" << endl << "6. bst" << endl;
+		cout << "Select what program to run: ";
 
 		if (!(cin >> choice)){
 			cin.clear(); //clears the error flag set by the cin

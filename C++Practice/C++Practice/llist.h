@@ -9,15 +9,21 @@ Prompt: Implement a linked list (with insert and delete functions)
 #include <iostream>
 using namespace std;
 
+/*
 struct node
 {
 	int data; //data stored
 	node *next; //points to next node
 };
-
+*/
 class llist
 {
 private:
+	struct node
+	{
+		int data; //data stored
+		node *next; //points to next node
+	};
 	node *front; //front of list pointer
 	node *back; //back of list pointer
 

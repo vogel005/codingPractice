@@ -112,36 +112,39 @@ void tree::delNode(int _data) {
 void tree::preorderTrav(node *temp) {
 
 	if (temp != NULL) {
-		cout << temp->data << " "; 
+		cout << temp->data << endl;
 		preorderTrav(temp->left);
 		preorderTrav(temp->right);
 	}
-	cout << endl;
 }
 
 
 void tree::bstProc() {
 	//empty tree
 	preorderTrav(root); 
-	/*
+
 	//add to tree
 	addNode(3);
 	addNode(5);
-	addNode(2);
+	addNode(2); //duplicate add test
 	addNode(7);
 	addNode(2);
 	addNode(23);
+	addNode(1);
+	addNode(0);
+	addNode(6);
 
 	preorderTrav(root);
+	cout << endl; 
 
 	//delete some of tree
-
-	delNode(3);
+	delNode(3); //delete root, 2 children
 	delNode(7);
 	delNode(2);
+	delNode(6); //delete node with 1 child
+	delNode(0); //delete node with no children
 
 	preorderTrav(root);
-	*/
 }
 
 //protected

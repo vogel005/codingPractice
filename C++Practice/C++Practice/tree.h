@@ -8,16 +8,21 @@ Prompt: Implement a BST with insert and delete functions
 #define TREE_H
 #include <iostream>
 using namespace std;
-
+/*
 struct node {
 	int data;
-	struct node* left;
-	struct node* right;
+	node* left;
+	node* right;
 };
-
+*/
 class tree
 {
 private:
+	struct node {
+		int data;
+		node* left;
+		node* right;
+	};
 	node *root;
 
 public:
@@ -26,7 +31,9 @@ public:
 
 	void addNode(int _data); //insert new node to the tree
 	void delNode(int _data); //delete node from the tree
+	//display
 	void preorderTrav(node *temp); //printing out the tree in preorder traversal
+	//display 2D
 
 	void bstProc(); //runs through the functions
 
