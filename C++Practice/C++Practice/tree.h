@@ -8,13 +8,7 @@ Prompt: Implement a BST with insert and delete functions
 #define TREE_H
 #include <iostream>
 using namespace std;
-/*
-struct node {
-	int data;
-	node* left;
-	node* right;
-};
-*/
+
 class tree
 {
 private:

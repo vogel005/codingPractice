@@ -1,7 +1,7 @@
 /* 
 John Vogel
 Start: 4/30/2018
-Last Modified: 5/8/2018
+Last Modified: 5/17/2018
 Prompt: Implement a linked list (with insert and delete functions)
 */
 #ifndef LLIST_H
@@ -9,13 +9,6 @@ Prompt: Implement a linked list (with insert and delete functions)
 #include <iostream>
 using namespace std;
 
-/*
-struct node
-{
-	int data; //data stored
-	node *next; //points to next node
-};
-*/
 class llist
 {
 private:
