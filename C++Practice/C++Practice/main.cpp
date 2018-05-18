@@ -1,6 +1,6 @@
 /*
 John Vogel
-Last Modified: 5/10/2018
+Last Modified: 5/17/2018
 Main file for C++ Coding Practice
 */
 #include <iostream>
@@ -8,6 +8,7 @@ Main file for C++ Coding Practice
 #include "nonRepeating.h"
 #include "stack.h"
 #include "llist.h"
+#include "tree.h"
 using namespace std;
 
 int main() {
@@ -16,12 +17,15 @@ int main() {
 	nonRepeating rep;
 	stack stac;
 	llist list; 
+	tree bst;
 	int choice =0;
 
 	//do while & switch statement to choose which program to run. 
 	do {
-		cout << "\n---C++ Coding Practice---\n1. Exit and end program\n2. mostFreq\n3. nonRepeating\n4. stack\n5. llist\nSelect what program to run: ";
-		
+		cout << "\n---C++ Coding Practice---" << endl;
+		cout << "1. Exit and end program" << endl << "2. mostFreq" << "3. nonRepeating" << endl << "4. stack" << endl << "5. llist" << endl << "6. bst" << endl;
+		cout << "Select what program to run: ";
+
 		if (!(cin >> choice)){
 			cin.clear(); //clears the error flag set by the cin
 			cin.ignore(256, '\n'); //ignores until end of line, 256 arbitrarily set
@@ -49,8 +53,12 @@ int main() {
 			case 5: 
 				list.listProc();
 				break;
+			case 6:
+				bst.bstProc();
+				break;
 			default:
 				cout << "Error: " << choice << " is an incorrect input. Try again." << endl;
+				//no break as end of switch already
 			}
 		}
 	} while (choice != 1);
