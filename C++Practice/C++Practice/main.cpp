@@ -9,6 +9,7 @@ Main file for C++ Coding Practice
 #include "stack.h"
 #include "llist.h"
 #include "tree.h"
+#include "sort.h"
 using namespace std;
 
 int main() {
@@ -18,12 +19,13 @@ int main() {
 	stack stac;
 	llist list; 
 	tree bst;
+	sort srt;
 	int choice =0;
 
 	//do while & switch statement to choose which program to run. 
 	do {
 		cout << "\n---C++ Coding Practice---" << endl;
-		cout << "1. Exit and end program" << endl << "2. mostFreq" << "3. nonRepeating" << endl << "4. stack" << endl << "5. llist" << endl << "6. bst" << endl;
+		cout << "1. Exit and end program" << endl << "2. mostFreq" << endl << "3. nonRepeating" << endl << "4. stack" << endl << "5. llist" << endl << "6. bst" << endl << "7. sort" << endl;
 		cout << "Select what program to run: ";
 
 		if (!(cin >> choice)){
@@ -55,6 +57,9 @@ int main() {
 				break;
 			case 6:
 				bst.bstProc();
+				break;
+			case 7:
+				srt.sortProc();
 				break;
 			default:
 				cout << "Error: " << choice << " is an incorrect input. Try again." << endl;
