@@ -15,7 +15,9 @@ public:
 	sort();
 	~sort();
 
-	//bubble sort
+	void bubble(int arr[], int n); //bubble sort for an array
+
+
 };
 
 #endif
